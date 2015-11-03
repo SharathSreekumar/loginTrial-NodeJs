@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1"><title>Home | asd</title>
+	
+	<link href="css/bootstrap.min.css" rel="stylesheet" type="text/css">
+	<link href="css/style.css" rel="stylesheet" type="text/css">
+</head>
+<body>
+	<nav class="navbar navbar-default navbar-fixed-top">
+		<div class="container-fluid">
+			<div class="navbar-header">
+				<div class="navbar-brand">
+					<h4>TRAVELLERS SPOT</h4>
+				</div>
+			</div>
+			<div class="collapse navbar-collapse col" id="bs-example-navbar-collapse-1">
+    	      		<ul class="nav navbar-nav navbar-right">
+        	    		<li><a href="#home">Home</a></li>
+    		        	<li><a href="#support">Support</a></li>
+        	    		<li><a href="#contact">Contact Us</a></li>
+          			</ul>
+        	</div>
+		</div>
+	</nav>
+	<div class="container containerMargin"></div>
+	<!-- For the form-->
+	<div class="row">
+		<div class="container col-lg-4"></div>
+		<div class="container col-lg-4">
+			<ul class="nav nav-pills" role="tablist">
+  				<li role="presentation" id="indexLogin" class="active"><a href="#" onClick="hide(signup,login,indexSignup,indexLogin)">Login</a></li>
+  				<li role="presentation" id="indexSignup"><a href="#" onClick="hide(login,signup,indexLogin,indexSignup)">Create Account</a></li>
+			</ul>
+			<div class="jumbotron" id="login">
+				<form action="/login" method="post" id="formLogin" onSubmit="return verifyLogin()">
+					<div class="form-group">
+		    			<label>Username</label>
+    					<input type="email" class="form-control" id="userid" name="uname" placeholder="Email">
+  					</div>
+  					<div class="form-group">
+    					<label>Password</label>
+    					<input type="password" class="form-control" id="pass" name="lpwrd" placeholder="Password">
+	  				</div>
+  					<button type="submit" class="btn btn-default">Login</button>
+				</form>
+			</div>
+			<div class="jumbotron" id="signup">
+				<form action="/signup" method="post" id="formCreate" onSubmit="return verify()"><!--return is necessary, else will redirect to action="<path>"-->
+					<div class="form-group">
+		    			<label>Username</label>
+    					<input type="email" class="form-control" id="email" name="user" placeholder="Email">
+  					</div>
+  					<div class="form-group">
+    					<label>Password</label>
+    					<input type="password" class="form-control" id="pass" name="spwrd" placeholder="Password">
+	  				</div>
+	  				<div class="form-group">
+    					<label>Confirm Password</label>
+    					<input type="password" class="form-control" id="cnpass" name="cnpwrd" placeholder="Confirm-Password">
+	  				</div>
+  					<button type="submit" class="btn btn-success" id="createAcc">Create Account</button> <button onClick="reset()" class="btn btn-danger" id="resetText">Reset</button>
+				</form>
+			</div>
+		</div>
+		<div class="container col-lg-4"></div>
+	</div>
+	<script src="js/jquery-1.11.2.min.js"></script>
+   	<script src="js/bootstrap.min.js"></script>
+   	<script src="js/index.js"></script>
+</body>
+</html>
